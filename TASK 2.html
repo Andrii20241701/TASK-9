@@ -15,12 +15,6 @@
     <!--    </style>-->
 </head>
 <body>
-<ul class="menu" id="List">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
 <script>
 
 
@@ -28,17 +22,23 @@
     //     ['Main','Products','About us','Contacts']
     // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
 
+    let array = ['Main','Products','About us','Contacts'];
 
-    let uls=body.getElementsByTagName('ul');
-    console.log(uls);
+    let arrayUl=document.createElement(`ul`)
+    document.body.appendChild(arrayUl)
+    arrayUl.classList.add('array')
 
-    let lis=body.getElementsByTagName('li');
-    console.log(lis);
+    for(const arr of array) {
+        let lis=document.createElement(`li`)
+        let arrayUlLi=document.createElement('h2')
+        lis.classList.add('lis')
 
-    let arr= ['Main','Products','About us','Contacts'];
-    console.log(arr);
+        arrayUlLi.innerText=`${arr}`
 
-    li.classList.add(arr);
+        lis.appendChild(arrayUlLi);
+        arrayUl.appendChild(lis)
+
+    }
 
 
 

@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <style>-->
-<!--        .block{-->
-<!--         border: 1px solid black;-->
-<!--         height: 50vh;-->
-<!--         background-color: green;-->
-<!--         color: blue;-->
-<!--         font-size: 20px;-->
-<!--        }-->
+    <style>
+        .block{
+         border: 1px solid black;
+         height: 50vh;
+         background-color: green;
+         color: blue;
+         font-size: 20px;
+        }
 
-<!--    </style>-->
+    </style>
 </head>
 <body>
-<ul class="menu" id="List">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
 <script>
 
 
@@ -32,35 +25,13 @@
     // - клонувати його повністю, та додати клон в body.
 
 //
-// let block=document.createElement(`div`);
-// document.body.appendChild(block)
-//
-//
-//     let wrap=document.createElement('h1')
-//     let collapse=document.createElement('h1')
-//     let alpha=document.createElement('h1')
-//     let beta=document.createElement('h1')
-//
-//     wrap.innerText='Hello';
-//     collapse.innerText='Hello';
-//     alpha.innerText='Hello';
-//     beta.innerText='Hello';
-//
-//     block.append(wrap, collapse, alpha, beta);
-//
-//     let clone=block.cloneNode(true);
-//     document.body.appendChild(clone)
+    let block=document.createElement(`div`);
+    document.body.appendChild(block)
+    block.classList.add('wrap','collapse','alpha','beta')
 
+    let clone=block.cloneNode(true);
+    document.body.appendChild(clone)
 
-    // - Є масив:
-    //     ['Main','Products','About us','Contacts']
-    // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
-
-       let uls=body.getElementsByTagName('ul');
-       console.log(uls);
-
-       let arr= ['Main','Products','About us','Contacts'];
-       console.log(arr)
 
 
 

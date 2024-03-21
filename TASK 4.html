@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-       . coursesAndDurationArray{
-           border:1px solid black;
-           height:100vh;
-       }
+        . coursesAndDurationArray{
+            border:1px solid black;
+            height:100vh;
+        }
         .item {
             border: 2px solid red;
             margin: 10px;
@@ -27,10 +27,15 @@
     //     {title: 'FullStack', monthDuration: 7},
     //     {title: 'Frontend', monthDuration: 4}
     // ];
-    // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
-    // Завдання робити через цикли.
+    //
+    //
+    // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
+    // в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'>
+    // з monthDuration елементу.
+    //     Завдання робити через цикли.
 
-    let coursesAndDurationArray = [
+
+        let coursesAndDurationArray = [
         {title: 'JavaScript Complex', monthDuration: 5},
         {title: 'Java Complex', monthDuration: 6},
         {title: 'Python Complex', monthDuration: 6},
@@ -46,12 +51,13 @@
 
     for(const courses of coursesAndDurationArray){
         let item=document.createElement(`div`)
-        let coursesDiv=document.createElement('h2')
+        let h1Heading=document.createElement('h1')
+        let pDescription=document.createElement('p')
         item.classList.add('item')
 
-        coursesDiv.innerText=`${courses.title}  ${courses.monthDuration}`
-
-        item.appendChild(coursesDiv);
+        h1Heading.innerText=`${courses.title}`
+        pDescription.innerText=`${courses.monthDuration}`
+        item.append(h1Heading,pDescription);
         coursesAndDurationArrayDiv.appendChild(item)
     }
 
