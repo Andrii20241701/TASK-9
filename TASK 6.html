@@ -7,7 +7,6 @@
         .item {
             display: flex;
             flex-wrap: wrap;
-            /*flex-direction: column;*/
             border: 2px solid red;
             margin: 10px;
             padding: 10px;
@@ -26,19 +25,6 @@
             align-items:center;
 
         }
-
-
-        /*.durationDiv{*/
-        /*    display:flex;*/
-        /*    !*flex-wrap: wrap;*!*/
-        /*    border: 2px solid blue;*/
-        /*    !*margin: 10px;*!*/
-        /*    !*padding: 10px;*!*/
-        /*    justify-content: center;*/
-        /*    flex-wrap: wrap;*/
-        /*    align-items:flex-start;*/
-
-
 
         .monthDuration {
             width: 250px;
@@ -60,14 +46,35 @@
             justify-content: center;
             align-items:center;
         }
-        .modules {
+        .modulesArray{
             width: 1500px;
             border: 2px solid blue;
             margin: 10px;
             padding: 10px;
-            font-size: 20px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        .modules {
+            width: 1200px;
+            border: 2px solid blue;
+            margin: 5px;
+            padding: 5px;
+            font-size:20px;
             display:flex;
             justify-content: center;
+            flex-wrap: wrap;
+            align-items:center;
+        }
+        .li{
+            width: 1200px;
+            border: 2px solid blue;
+            margin: 5px;
+            padding: 5px;
+            font-size:20px;
+            display:flex;
+            justify-content: flex-start;
+            /*flex-wrap: wrap;*/
             align-items:center;
         }
 
@@ -160,30 +167,36 @@
     for(const courses of coursesArray){
         let item=document.createElement(`div`)
         let title=document.createElement(`div`)
-        // let durationDiv=document.createElement(`div`)
         let monthDuration=document.createElement(`div`)
         let hourDuration=document.createElement(`div`)
         let modules=document.createElement(`div`)
+        let modulesArray=document.createElement(`div`)
         let ul=document.createElement(`ul`);
-        let li=document.createElement(`li`);
+
 
         item.classList.add('item')
         title.classList.add('title')
-        // durationDiv.classList.add('durationDiv')
         monthDuration.classList.add('monthDuration')
         hourDuration.classList.add('hourDuration')
         modules.classList.add('modules')
+        modulesArray.classList.add('modulesArray')
+        ul.classList.add('ul')
 
         title.innerText=`title: ${courses.title}`
         monthDuration.innerText=`monthDuration: ${courses.monthDuration}`
         hourDuration.innerText=`hourDuration: ${courses.hourDuration}`
         modules.innerText='modules:'
-        li.innerText=`${courses.modules}`
 
-        ul.appendChild(li)
-        modules.appendChild(ul)
-        // durationDiv.append(monthDuration,hourDuration)
-        item.append(title,monthDuration,hourDuration,modules)
+        for(const module of courses.modules) {
+            let li=document.createElement(`li`)
+            li.classList.add('li')
+            li.innerText=`${module}`
+            ul.appendChild(li)
+        }
+
+
+        modulesArray.append(modules,ul)
+        item.append(title,monthDuration,hourDuration,modulesArray)
         coursesArrayDiv.appendChild(item)
     }
 
